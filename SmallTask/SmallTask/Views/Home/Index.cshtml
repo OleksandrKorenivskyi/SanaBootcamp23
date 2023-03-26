@@ -1,0 +1,16 @@
+﻿@model GreetingModel
+
+@if (string.IsNullOrEmpty(Model.Name))
+{
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+        <p>Enter your name:</p>
+        @Html.EditorFor(m => m.Name)
+        <button type="submit">Submit</button>
+    }
+}
+else
+{
+    <h1>Hello, @Model.Name!</h1>
+}
+
